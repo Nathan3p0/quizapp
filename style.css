@@ -84,20 +84,27 @@ body {
     margin: 0;
 }
 
-.intro, .correct-answer {
+.intro, .correct-answer, .wrong-answer {
     text-align: center;
     margin: auto;
 }
 
-.correct-answer {
+.correct-answer, .wrong-answer {
     width: 100%;
 }
 
-.correct-answer .fa-thumbs-up {
+.correct-answer .fa-thumbs-up, .wrong-answer .fa-thumbs-down {
     padding: 30px;
 }
 
 /* Font STyling */
+
+#correct-answer-string {
+    font-size: 1rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    padding-top: 0;
+}
 
 .fa-arrow-right {
     color: var(--dark)
@@ -115,13 +122,13 @@ h2 {
     font-family: 'Roboto Slab', serif;
 }
 
-.intro p,.correct-answer p {
+.intro p,.correct-answer p, .wrong-answer p {
     font-size: 2rem;
     padding: 20px;
     font-weight: bold;
 }
 
-.correct-answer p {
+.correct-answer p, .wrong-answer p {
     font-size: 3rem;
     font-family: 'Roboto Slab', serif;
 }
