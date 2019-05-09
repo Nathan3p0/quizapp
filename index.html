@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <title>The Graphic Design Quiz App</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>The Graphic Design Quiz</h1>
+        <main class="main-quiz">
+            <section class="questions">
+                <form id="quiz-form">
+                    <fieldset>
+                        <legend><sup>#</sup><span id="question-number">1</span>. This is the first question?</legend>
+                        <div>
+                            <input type="radio" name="answer" id="answer_1" value="" class="form-radio" required>
+                            <label for="answer_1">Lorem ipsum dolor sit amet.</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="answer" id="answer_2" value="" class="form-radio" required>
+                            <label for="answer_2">Lorem ipsum dolor sit amet consectetur.</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="answer" id="answer_3" value="" class="form-radio" required>
+                            <label for="answer_3">Lorem ipsum dolor sit amet, consectetur adipisicing.</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="answer" id="answer_4" value="" class="form-radio" required>
+                            <label for="answer_4">Lorem ipsum dolor sit.</label>
+                        </div>
+                    </fieldset>
+                    <button class="btn">Submit Answer</button>
+                </form>
+            </section>
+            <section  class="right-box right-box-a">
+                <i class="fas fa-question-circle fa-3x"></i>
+                <p class="questionnum"><sup>#</sup><span id="question-number">1</span></p>
+            </section>
+            <section class="right-box right-box-b">
+                <i class="fas fa-star fa-3x"></i>
+                <p class="numcorrect"><span id="questions-correct">7</span>/<span id="total-questions">10</span></p>
+            </section>    
+        </section>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
