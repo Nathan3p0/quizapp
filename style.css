@@ -79,17 +79,17 @@ body {
 }
 
 .questionnum, .numcorrect {
-    font-size: 3rem;
+    font-size: 5rem;
     padding: 0;
     margin: 0;
 }
 
-.intro, .correct-answer, .wrong-answer {
+.intro, .correct-answer, .wrong-answer, .final-results {
     text-align: center;
     margin: auto;
 }
 
-.correct-answer, .wrong-answer {
+.correct-answer, .wrong-answer, .final-results {
     width: 100%;
 }
 
@@ -99,6 +99,15 @@ body {
 
 /* Font STyling */
 
+.fa-spray-can {
+    font-size: 3.5rem;
+}
+
+.final-correct {
+    font-size: 5rem;
+    padding-bottom: 20px;
+}
+
 #correct-answer-string {
     font-size: 1rem;
     font-family: 'Raleway', sans-serif;
@@ -106,7 +115,7 @@ body {
     padding-top: 0;
 }
 
-.fa-arrow-right {
+.fa-arrow-right, .fa-undo {
     color: var(--dark)
 }
 
@@ -122,6 +131,14 @@ h2 {
     font-family: 'Roboto Slab', serif;
 }
 
+h3 {
+    font-size: 4rem;
+}
+
+h4 {
+    font-size: 3rem;
+}
+
 .intro p,.correct-answer p, .wrong-answer p {
     font-size: 2rem;
     padding: 20px;
@@ -133,13 +150,10 @@ h2 {
     font-family: 'Roboto Slab', serif;
 }
 
-.intro .btn, .correct-answer .btn {
+.intro .btn, .correct-answer .btn, .final-results .btn {
     font-weight: bold;
 }
 
-h4 {
-    font-size: 3rem;
-}
 
 sup {
     font-size: 1.2rem;
@@ -153,10 +167,6 @@ form {
 fieldset {
     border: none;
     font-size: 2.3rem;
-}
-
-#question-number {
-    font-size: 5rem;
 }
 
 .form-radio
@@ -239,10 +249,6 @@ label:hover {
     fieldset {
         font-size: 1.8rem;
     }
-
-    #question-number {
-        font-size: 2.5rem;
-    }
 }
 
 @media(max-width: 500px) {
@@ -261,7 +267,4 @@ label:hover {
         font-size: 1.3rem;
     }
 
-    #question-number {
-        font-size: 2rem;
-    }
 }
