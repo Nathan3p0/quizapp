@@ -5,6 +5,7 @@
         --primary: #ddd;
         --dark: #333;
         --light: #fff;
+        --green: #8bdb66;
         --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);    
 }
 /* Base Styling */
@@ -97,7 +98,7 @@ body {
     padding: 30px;
 }
 
-/* Font STyling */
+/* Font Styling */
 
 .fa-spray-can {
     font-size: 3.5rem;
@@ -169,8 +170,7 @@ fieldset {
     font-size: 2.3rem;
 }
 
-.form-radio
-{
+.form-radio {
      -webkit-appearance: none;
      -moz-appearance: none;
      appearance: none;
@@ -186,8 +186,7 @@ fieldset {
      margin-right: 7px;
      outline: none;
 }
-.form-radio:checked::before
-{
+.form-radio:checked::before {
      position: absolute;
      font: 13px/1 'Open Sans', sans-serif;
      left: 11px;
@@ -195,16 +194,13 @@ fieldset {
      content: '\02143';
      transform: rotate(40deg);
 }
-.form-radio:hover
-{
-     background-color: #8bdb66;
+.form-radio:hover {
+     background-color: var(--green);
 }
-.form-radio:checked
-{
-     background-color: #8bdb66;
+.form-radio:checked {
+     background-color: var(--green);
 }
-label
-{
+label {
      font-size: .9rem;
      cursor: pointer;
      padding: 20px;
@@ -213,7 +209,7 @@ label
 } 
 
 label:hover {
-    color: #8bdb66;
+    color: var(--green);
 }
 
 .btn {
@@ -224,13 +220,6 @@ label:hover {
     border: 0;
     margin-top: 1.5rem;
     font-size: 2rem;
-    transition: padding .5s;
-    transition-timing-function: ease-in-out;
-    cursor: pointer;
-}
-
-.btn:hover {
-    padding: 1.3rem 1.3rem;
 }
 
 /* Media Queries */
