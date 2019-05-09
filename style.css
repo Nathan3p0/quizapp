@@ -84,12 +84,24 @@ body {
     margin: 0;
 }
 
-.intro {
+.intro, .correct-answer {
     text-align: center;
     margin: auto;
 }
 
-/* Font Sizing */
+.correct-answer {
+    width: 100%;
+}
+
+.correct-answer .fa-thumbs-up {
+    padding: 30px;
+}
+
+/* Font STyling */
+
+.fa-arrow-right {
+    color: var(--dark)
+}
 
 h1 {
     font-family: 'Roboto Slab', serif;
@@ -103,13 +115,18 @@ h2 {
     font-family: 'Roboto Slab', serif;
 }
 
-.intro p {
+.intro p,.correct-answer p {
     font-size: 2rem;
     padding: 20px;
     font-weight: bold;
 }
 
-.intro .btn {
+.correct-answer p {
+    font-size: 3rem;
+    font-family: 'Roboto Slab', serif;
+}
+
+.intro .btn, .correct-answer .btn {
     font-weight: bold;
 }
 
