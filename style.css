@@ -84,10 +84,33 @@ body {
     margin: 0;
 }
 
+.intro {
+    text-align: center;
+    margin: auto;
+}
+
+/* Font Sizing */
+
 h1 {
     font-family: 'Roboto Slab', serif;
     color: var(--dark);
     font-size: 3rem;
+}
+
+h2 {
+    font-size: 3rem;
+    padding: 20px;
+    font-family: 'Roboto Slab', serif;
+}
+
+.intro p {
+    font-size: 2rem;
+    padding: 20px;
+    font-weight: bold;
+}
+
+.intro .btn {
+    font-weight: bold;
 }
 
 h4 {
