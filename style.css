@@ -102,7 +102,7 @@ hr {
 }
 /* Font Styling */
 
-.fa-spray-can {
+.fa-magic {
     font-size: 3.5rem;
     color: var(--red);
 }
@@ -350,7 +350,7 @@ label:hover {
         font-size: 2.4rem;
     }
 
-    .fa-spray-can {
+    .fa-magic {
         font-size: 2rem;
     }
 }

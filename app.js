@@ -188,7 +188,7 @@ function renderFinalResults() {
     $('.questions').html(`
         <section class="final-results">
             <h3>${finalResultMessage()}</h3>
-            <p class="final-correct"><i class="fas fa-spray-can"></i> <span id="questions-correct">${currentScore}</span>/<span class="total-questions">${questions.length}</span></p>
+            <p class="final-correct"><i class="fas fa-magic"></i> <span id="questions-correct">${currentScore}</span>/<span class="total-questions">${questions.length}</span></p>
             <hr>
             <button class="btn btn-restart">Take It Again <i class="fas fa-undo"></i></button>
         </section>
