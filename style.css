@@ -118,10 +118,12 @@ hr {
 }
 
 #correct-answer-string {
-    font-size: 1rem;
+    font-size: 2rem;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     padding-top: 0;
+    margin-bottom: 10px;
+    color: var(--medium);
 }
 
 .fa-undo {
@@ -201,10 +203,14 @@ h4 {
     font-size: 3rem;
 }
 
-.intro p,.correct-answer p, .wrong-answer p {
+.intro p,.correct-answer p {
     font-size: 2rem;
     padding: 20px;
     font-weight: bold;
+}
+
+.wrong-answer p {
+    font-size: 1.7rem;
 }
 
 .correct-answer p, .wrong-answer p {
@@ -269,7 +275,7 @@ fieldset {
      color: var(--light);
 }
 label {
-     font-size: .9rem;
+     font-size: 1rem;
      cursor: pointer;
      padding: 20px;
      transition: color .3s;
@@ -332,4 +338,11 @@ label:hover {
         font-size: 1.3rem;
     }
 
+    .wrong-answer p {
+        font-size: 1.6rem;
+    }
+
+    #correct-answer-string {
+        font-size: 1.4rem;
+    }
 }
