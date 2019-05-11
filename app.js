@@ -177,6 +177,7 @@ function handleWrongAnswerSubmit() {
 }
 
 // Display final results to DOM showing final score and restart button
+// Display message based on final score
 // Add event listener to restart button
 // On click return to intro page
 // Reset current Score to 0
@@ -186,12 +187,25 @@ function renderFinalResults() {
     console.log('This is the final results');
     $('.questions').html(`
         <section class="final-results">
-            <h3>Awesome Job!</h3>
+            <h3>${finalResultMessage()}</h3>
             <p class="final-correct"><i class="fas fa-spray-can"></i> <span id="questions-correct">${currentScore}</span>/<span class="total-questions">${questions.length}</span></p>
             <hr>
             <button class="btn btn-restart">Take It Again <i class="fas fa-undo"></i></button>
         </section>
     `);
+}
+
+function finalResultMessage() {
+    const percentage = (currentScore / questions.length) * 100;
+    if (percentage === 100) {
+       return 'The DESIGN is strong in this one!';
+    } else if (percentage >= 80) {
+       return  'WOW! You did great!';
+    } else if( percentage >= 60) {
+       return 'Not too bad. You\'ll get it next time!';
+    } else {
+       return 'Those are ROOKIE NUMBERS!';
+    }
 }
 
 function handleRestartSubmit() {
