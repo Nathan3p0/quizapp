@@ -104,7 +104,7 @@ function handleCorrectAnswerSubmit() {
             changeQuestionCount();;
             $('.questions').html(generateQuestionTemplate());
         } else {
-            $('.questions').html(renderFinalResults());
+            renderFinalResults();
         }
     })
 }
@@ -171,7 +171,7 @@ function handleWrongAnswerSubmit() {
             $('.questions').html(generateQuestionTemplate());
         } else {
             console.log(questionCount);
-            $('.questions').html(renderFinalResults());
+            renderFinalResults();
         }
     })
 }
@@ -184,14 +184,14 @@ function handleWrongAnswerSubmit() {
 
 function renderFinalResults() {
     console.log('This is the final results');
-    return `
+    $('.questions').html(`
         <section class="final-results">
             <h3>Awesome Job!</h3>
             <p class="final-correct"><i class="fas fa-spray-can"></i> <span id="questions-correct">${currentScore}</span>/<span class="total-questions">${questions.length}</span></p>
             <hr>
             <button class="btn btn-restart">Take It Again <i class="fas fa-undo"></i></button>
         </section>
-    `
+    `);
 }
 
 function handleRestartSubmit() {

@@ -345,4 +345,16 @@ label:hover {
     #correct-answer-string {
         font-size: 1.4rem;
     }
+
+    h3 {
+        font-size: 2.5rem;
+    }
+
+    .final-correct {
+        font-size: 2.4rem;
+    }
+
+    .fa-spray-can {
+        font-size: 2rem;
+    }
 }
