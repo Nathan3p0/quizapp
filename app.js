@@ -67,12 +67,9 @@ function handleQuestionSubmit() {
 function checkAnswer() {
     const submittedAnswer =  $("input[name='answer']:checked"). val();
     if (submittedAnswer === questions[questionCount].correct) {
-        currentScore++;
-        questionCount++;
+        changeScore();
         renderCorrectAnswer();
-        $('span.question-number').text(questionCount+1);
     } else {
-        questionCount++;
         renderWrongAnswer();
         $('span.question-number').text(questionCount+1);
     }
@@ -87,12 +84,15 @@ function checkAnswer() {
 function handleCorrectAnswerSubmit() {
     $('.questions').on('click', '.btn-correct', function() {
         if (questionCount < questions.length) {
+            questionCount++;
+            $('span.question-number').text(questionCount+1);
             $('.questions').html(generateQuestionTemplate());
         } else {
             $('.questions').html(renderFinalResults());
         }
     })
 }
+
 
 function renderCorrectAnswer(answer) {
     $('.questions').html(`
@@ -107,11 +107,30 @@ function renderCorrectAnswer(answer) {
     console.log('Right Answer Has Been Served')
 }
 
+function changeScore() {
+    currentScore++;
+    $('.questions-correct').html(currentScore);
+    console.log('Point Added to Score')
+}
+
 // Render Template to DOM for Wrong Answer Page
 // Add event listener to submit
 // On click don't add points
 // If questionCount === 10 send to results page
 // On click return to question template if less then 10
+
+function getCorrectAnswer(){
+    const correctAnswer = questions[questionCount].correct;
+    if (correctAnswer === 'A') {
+        return questions[questionCount].choiceA;
+    } else if ( correctAnswer === 'B') {
+        return questions[questionCount].choiceB;
+    } else if ( correctAnswer === 'C') {
+        return questions[questionCount].choiceC;
+    } else{
+        return questions[questionCount].choiceD;
+    }
+}
 
 function renderWrongAnswer() {
     $('.questions').html(`
@@ -119,22 +138,56 @@ function renderWrongAnswer() {
         <i class="fas fa-thumbs-down fa-8x"></i>
         <hr>
         <p>The Correct Answer Is:</p>
-        <p id='correct-answer-string'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, nisi.</p>
+        <p id='correct-answer-string'>${getCorrectAnswer()}</p>
         <hr>
-        <button class="btn">Continue <i class="fas fa-arrow-right"></i></button>
+        <button class="btn btn-wrong">Continue <i class="fas fa-arrow-right"></i></button>
     </section>
     `);
     console.log('Wrong Answer Has Been Served');
 }
 
+function handleWrongAnswerSubmit() {
+    $('.questions').on('click', '.btn-wrong', function() {
+        if (questionCount < questions.length - 1) {
+            questionCount++;
+            console.log(questionCount);
+            $('span.question-number').text(questionCount+1);
+            $('.questions').html(generateQuestionTemplate());
+        } else {
+            console.log(questionCount);
+            $('.questions').html(renderFinalResults());
+        }
+    })
+}
+
+// Display final results to DOM showing final score and restart button
+// Add event listener to restart button
+// On click return to intro page
+// Reset current Score to 0
+// Reset current question to 0
+
 function renderFinalResults() {
     console.log('This is the final results');
+    return `
+        <section class="final-results">
+            <h3>Awesome Job!</h3>
+            <p class="final-correct"><i class="fas fa-spray-can"></i> <span id="questions-correct">${currentScore}</span>/<span class="total-questions">${questions.length}</span></p>
+            <hr>
+            <button class="btn btn-restart">Take It Again <i class="fas fa-undo"></i></button>
+        </section>
+    `
+}
+
+function handleRestartSubmit() {
+
 }
 
 function handleQuizApp() {
     handleStartQuiz();
     handleQuestionSubmit();
     handleCorrectAnswerSubmit();
+    handleWrongAnswerSubmit();
+    handleRestartSubmit();
 }
 
 window.onload = handleQuizApp();
