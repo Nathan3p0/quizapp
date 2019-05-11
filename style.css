@@ -71,10 +71,6 @@ body {
     background-size: cover;
     background-position: center;
     padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
     box-shadow: var(--shadow);
     border-radius: .4rem;
 }
@@ -143,13 +139,13 @@ hr {
 }
 
 .fa-arrow-right {
-    animation-name: point;
+    animation-name: point-right;
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
 }
 
-@keyframes point {
+@keyframes point-right {
     0% {
         transform: translate(0px, 0px);
         color: var(--medium);
@@ -165,13 +161,13 @@ hr {
 }
 
 .fa-arrow-down {
-    animation-name: direct;
+    animation-name: point-down;
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
 }
 
-@keyframes direct {
+@keyframes point-down {
     0% {
         transform: translate(0px, 0px);
     }

@@ -41,20 +41,20 @@ function generateQuestionTemplate() {
         <fieldset>
             <legend><sup>#</sup><span class="question-number">${questionCount+1}</span>. ${questions[questionCount].question}</legend>
             <div>
-                <input type="radio" name="answer" id="answer_1" value="A" class="form-radio" required>
-                <label for="answer_1">${questions[questionCount].choiceA}</label>
+                <input type="radio" name="answer" id="answer-1" value="A" class="form-radio" required>
+                <label for="answer-1">${questions[questionCount].choiceA}</label>
             </div>
             <div>
-                <input type="radio" name="answer" id="answer_2" value="B" class="form-radio" required>
-                <label for="answer_2">${questions[questionCount].choiceB}</label>
+                <input type="radio" name="answer" id="answer-2" value="B" class="form-radio" required>
+                <label for="answer-2">${questions[questionCount].choiceB}</label>
             </div>
             <div>
-                <input type="radio" name="answer" id="answer_3" value="C" class="form-radio" required>
-                <label for="answer_3">${questions[questionCount].choiceC}</label>
+                <input type="radio" name="answer" id="answer-3" value="C" class="form-radio" required>
+                <label for="answer-3">${questions[questionCount].choiceC}</label>
             </div>
             <div>
-                <input type="radio" name="answer" id="answer_4" value="D" class="form-radio" required>
-                <label for="answer_4">${questions[questionCount].choiceD}</label>
+                <input type="radio" name="answer" id="answer-4" value="D" class="form-radio" required>
+                <label for="answer-4">${questions[questionCount].choiceD}</label>
             </div>
         </fieldset>
         <button class="btn submit-btn">Submit Answer</button>
