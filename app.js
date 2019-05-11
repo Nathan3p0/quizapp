@@ -6,18 +6,6 @@
 let currentScore = 0;
 let questionCount = 0;
 
-function renderIntroPage(){
-    return $('.questions').html(`
-        <section class='intro'>
-            <h2>The Design Quiz</h2>
-            <hr>
-            <p>Are You Ready?</p>
-            <i class="fas fa-arrow-down fa-3x"></i>
-            <button class='btn start-btn'>START</button>
-        </section>
-    `)
-}
-
 function handleStartQuiz() {
     $('.questions').on('click', '.start-btn', function(event) {
         event.preventDefault();
@@ -218,8 +206,19 @@ function handleRestartSubmit() {
     })
 }
 
+function renderIntroPage(){
+    return $('.questions').html(`
+        <section class='intro'>
+            <h2>The Design Quiz</h2>
+            <hr>
+            <p>Are You Ready?</p>
+            <i class="fas fa-arrow-down fa-3x"></i>
+            <button class='btn start-btn'>START</button>
+        </section>
+    `)
+}
+
 function handleQuizApp() {
-    renderIntroPage();
     handleStartQuiz();
     handleQuestionSubmit();
     handleCorrectAnswerSubmit();
