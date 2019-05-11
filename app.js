@@ -6,8 +6,20 @@
 let currentScore = 0;
 let questionCount = 0;
 
+function renderIntroPage(){
+    return $('.questions').html(`
+        <section class='intro'>
+            <h2>The Design Quiz</h2>
+            <hr>
+            <p>Are You Ready?</p>
+            <i class="fas fa-arrow-down fa-3x"></i>
+            <button class='btn start-btn'>START</button>
+        </section>
+    `)
+}
+
 function handleStartQuiz() {
-    $('.start-btn').on('click', function(event) {
+    $('.questions').on('click', '.start-btn', function(event) {
         event.preventDefault();
         console.log('handleStartQuiz Ran')
         $('.questions').html(generateQuestionTemplate());
@@ -56,6 +68,10 @@ function generateQuestionTemplate() {
 // If answer is correct 'currentScore++' & render correct answer page
 // If answer is wrong do not add a point & render wrong answer page
 
+function changeQuestionCount() {
+    return $('span.question-number').text(questionCount+1);
+}
+
 function handleQuestionSubmit() {
     $('.questions').on('submit', '#quiz-form', function(event){
         event.preventDefault();
@@ -71,7 +87,7 @@ function checkAnswer() {
         renderCorrectAnswer();
     } else {
         renderWrongAnswer();
-        $('span.question-number').text(questionCount+1);
+        changeQuestionCount();
     }
 };
 
@@ -83,9 +99,9 @@ function checkAnswer() {
 
 function handleCorrectAnswerSubmit() {
     $('.questions').on('click', '.btn-correct', function() {
-        if (questionCount < questions.length) {
+        if (questionCount < questions.length - 1) {
             questionCount++;
-            $('span.question-number').text(questionCount+1);
+            changeQuestionCount();;
             $('.questions').html(generateQuestionTemplate());
         } else {
             $('.questions').html(renderFinalResults());
@@ -109,7 +125,7 @@ function renderCorrectAnswer(answer) {
 
 function changeScore() {
     currentScore++;
-    $('.questions-correct').html(currentScore);
+    $('.questions-correct').text(currentScore);
     console.log('Point Added to Score')
 }
 
@@ -151,7 +167,7 @@ function handleWrongAnswerSubmit() {
         if (questionCount < questions.length - 1) {
             questionCount++;
             console.log(questionCount);
-            $('span.question-number').text(questionCount+1);
+            changeQuestionCount();;
             $('.questions').html(generateQuestionTemplate());
         } else {
             console.log(questionCount);
@@ -179,10 +195,17 @@ function renderFinalResults() {
 }
 
 function handleRestartSubmit() {
-
+    $('.questions').on('click', '.btn-restart', function() {
+        currentScore = 0;
+        questionCount = 0;
+        renderIntroPage();
+        changeQuestionCount();;
+        $('.questions-correct').text(currentScore);
+    })
 }
 
 function handleQuizApp() {
+    renderIntroPage();
     handleStartQuiz();
     handleQuestionSubmit();
     handleCorrectAnswerSubmit();
