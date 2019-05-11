@@ -2,10 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:500|Roboto+Slab');
 /* CSS Variables */
 :root {
-        --primary: #ddd;
         --light: #fcfff7;
         --dark: #114b5f;
         --red: #d52941;
+        --medium: #456990;
         --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);    
 }
 /* Base Styling */
@@ -98,15 +98,23 @@ body {
     padding: 30px;
 }
 
+hr { 
+    border: 0; 
+    height: 2px; 
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), 
+    rgba(179, 22, 22, 0.75), rgba(0, 0, 0, 0)); 
+}
 /* Font Styling */
 
 .fa-spray-can {
     font-size: 3.5rem;
+    color: var(--red);
 }
 
 .final-correct {
     font-size: 5rem;
     padding-bottom: 20px;
+    color: var(--red);
 }
 
 #correct-answer-string {
@@ -116,8 +124,61 @@ body {
     padding-top: 0;
 }
 
-.fa-arrow-right, .fa-undo {
-    color: var(--dark)
+.fa-undo {
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(-360deg);
+    }
+}
+
+.fa-arrow-right {
+    animation-name: point;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes point {
+    0% {
+        transform: translate(0px, 0px);
+        color: var(--medium);
+    }
+    50% {
+        transform: translate(5px, 0px);
+        color: var(--light);
+    }
+    100% {
+        transform: translate(0px, 0px);
+        color: var(--medium);
+    }
+}
+
+.fa-arrow-down {
+    animation-name: direct;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes direct {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translate(0px, 7px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
 }
 
 h1 {
@@ -201,9 +262,11 @@ fieldset {
 }
 .form-radio:hover {
      background-color: var(--red);
+     color: var(--light);
 }
 .form-radio:checked {
      background-color: var(--red);
+     color: var(--light);
 }
 label {
      font-size: .9rem;
@@ -218,7 +281,7 @@ label:hover {
 
 .btn {
     color: var(--light);
-    background: #456990;
+    background: var(--medium);
     width: 100%;
     padding: 1rem 1.3rem;
     text-decoration: none;
