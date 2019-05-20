@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <title>The Graphic Design Quiz App</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header role="banner">
+        <h1>The Graphic Design Quiz</h1>
+        </header>
+        <main class="main-quiz" role="main">
+            <section class="questions">
+                <form id="quiz-form" >
+                    <fieldset>
+                        <legend><sup>#</sup>1</span>. Who invented the printing press?</legend>
+                        <div>
+                            <input type="radio" name="answer" id="answer-1" value="A" class="form-radio" required>
+                            <label for="answer-1">Henry Ford</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="answer" id="answer-2" value="B" class="form-radio" required>
+                            <label for="answer-2">Alexander Bell</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="answer" id="answer-3" value="C" class="form-radio" required>
+                            <label for="answer-3">Johannes Gutenberg</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="answer" id="answer-4" value="D" class="form-radio" required>
+                            <label for="answer-4">James Watt</label>
+                        </div>
+                    </fieldset>
+                    <a href="rightorwrong.html" class="btn submit-btn">Submit Answer</a>
+                </form>
+            </section>
+            <section  class="right-box right-box-a">
+                <i class="fas fa-question-circle fa-3x"></i>
+                <p class="questionnum"><sup>#</sup><span class="question-number">1</span></p>
+            </section>
+            <section class="right-box right-box-b">
+                <i class="fas fa-star fa-3x"></i>
+                <p class="numcorrect"><span class="questions-correct">0</span>/<span class="total-questions">10</span></p>
+            </section>
+        </main>
+    </div>
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
